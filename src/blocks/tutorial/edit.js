@@ -12,18 +12,15 @@ import { isBlobURL } from '@wordpress/blob';
 /**
  * Block edit function
  */
-class Edit extends Component {
-	constructor() {
-
-	}
-
+const editor = () => {
+	
 	render() {
 
 
 		return (
-			<div></div>
+			<div>This is my first WP block</div>
 		)
 	}
 }
 
-export default  Edit;
+export default  editor;

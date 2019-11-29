@@ -29,13 +29,13 @@ const settings = {
 	description: __( 'Add a structured wrapper for column blocks, then add content blocks you’d like to the columns.', 'coblocks' ),
 	icon,
 	keywords: [
-		'coblocks',
+		'tutorial',
 		/* translators: block keyword */
-		__( 'rows', 'coblocks' ),
+		__( 'tutorial', 'tutorial' ),
 		/* translators: block keyword */
-		__( 'columns', 'coblocks' ),
+		__( 'learning', 'tutorial' ),
 		/* translators: block keyword */
-		__( 'layouts', 'coblocks' ),
+		__( 'knowledge', 'tutorial' ),
 	],
 
 	attributes,

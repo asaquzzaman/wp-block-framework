@@ -107,69 +107,6 @@ module.exports = _arrayWithoutHoles;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-module.exports = _assertThisInitialized;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-module.exports = _classCallCheck;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-module.exports = _createClass;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
@@ -193,34 +130,6 @@ function _defineProperty(obj, key, value) {
 }
 
 module.exports = _defineProperty;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) setPrototypeOf(subClass, superClass);
-}
-
-module.exports = _inherits;
 
 /***/ }),
 
@@ -254,49 +163,6 @@ module.exports = _nonIterableSpread;
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
-
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof(call) === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return assertThisInitialized(self);
-}
-
-module.exports = _possibleConstructorReturn;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _setPrototypeOf(o, p) {
-  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-module.exports = _setPrototypeOf;
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
@@ -315,33 +181,6 @@ function _toConsumableArray(arr) {
 }
 
 module.exports = _toConsumableArray;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
-
-function _typeof(obj) {
-  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
-    module.exports = _typeof = function _typeof(obj) {
-      return _typeof2(obj);
-    };
-  } else {
-    module.exports = _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
-    };
-  }
-
-  return _typeof(obj);
-}
-
-module.exports = _typeof;
 
 /***/ }),
 
@@ -448,73 +287,9 @@ var deprecated = [];
   !*** ./src/blocks/tutorial/edit.js ***!
   \*************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/blob */ "@wordpress/blob");
-/* harmony import */ var _wordpress_blob__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blob__WEBPACK_IMPORTED_MODULE_9__);
-
-
-
-
-
-
-/**
- * WordPress dependencies
- */
-
-
-
-
-
-
-/**
- * Block edit function
- */
-
-var Edit =
-/*#__PURE__*/
-function (_Component) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_3___default()(Edit, _Component);
-
-  function Edit() {
-    var _this;
-
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Edit);
-
-    return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(_this);
-  }
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Edit, [{
-    key: "render",
-    value: function render() {
-      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["createElement"])("div", null);
-    }
-  }]);
-
-  return Edit;
-}(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/src/blocks/tutorial/edit.js: Unexpected token (15:15)\n\n\u001b[0m \u001b[90m 13 | \u001b[39m\u001b[90m * Block edit function\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[90m */\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 | \u001b[39m\u001b[36mconst\u001b[39m editor \u001b[33m=\u001b[39m \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m\t\u001b[0m\n\u001b[0m \u001b[90m 17 | \u001b[39m\trender() {\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:6975:17)\n    at Object.unexpected (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:8368:16)\n    at Object.parseExprAtom (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:9627:20)\n    at Object.parseExprAtom (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:4097:20)\n    at Object.parseExprSubscripts (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:9210:23)\n    at Object.parseMaybeUnary (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:9190:21)\n    at Object.parseExprOps (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:9056:23)\n    at Object.parseMaybeConditional (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:9029:23)\n    at Object.parseMaybeAssign (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:8975:21)\n    at Object.parseVar (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:11307:26)\n    at Object.parseVarStatement (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:11126:10)\n    at Object.parseStatementContent (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:10723:21)\n    at Object.parseStatement (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:10656:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:11232:25)\n    at Object.parseBlockBody (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:11219:10)\n    at Object.parseTopLevel (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:10587:10)\n    at Object.parse (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:12097:10)\n    at parse (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/parser/lib/index.js:12148:38)\n    at parser (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/core/lib/transformation/normalize-file.js:168:34)\n    at normalizeFile (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/core/lib/transformation/normalize-file.js:102:11)\n    at runSync (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at process.nextTick (/Users/wedevs/Computer/htdocs/hrm/wp-content/plugins/tutorial/node_modules/@babel/core/lib/transform.js:34:34)\n    at processTicksAndRejections (internal/process/task_queues.js:79:9)");
 
 /***/ }),
 
@@ -607,13 +382,13 @@ var settings = {
   /* translators: block description */
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('Add a structured wrapper for column blocks, then add content blocks you’d like to the columns.', 'coblocks'),
   icon: _icon__WEBPACK_IMPORTED_MODULE_3__["default"],
-  keywords: ['coblocks',
+  keywords: ['tutorial',
   /* translators: block keyword */
-  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('rows', 'coblocks'),
+  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('tutorial', 'tutorial'),
   /* translators: block keyword */
-  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('columns', 'coblocks'),
+  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('learning', 'tutorial'),
   /* translators: block keyword */
-  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('layouts', 'coblocks')],
+  Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_7__["__"])('knowledge', 'tutorial')],
   attributes: attributes,
   transforms: _transforms__WEBPACK_IMPORTED_MODULE_6__["default"],
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -662,20 +437,24 @@ function Save(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./block.json */ "./src/blocks/tutorial/block.json");
-var _block_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./block.json */ "./src/blocks/tutorial/block.json", 1);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/**
- * Internal dependencies
- */
-
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * WordPress dependencies
  */
 
-
-var transforms = {};
+var transforms = {
+  from: [{
+    type: 'block',
+    blocks: ['core/paragraph'],
+    transform: function transform(_ref) {
+      var content = _ref.content;
+      return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["createBlock"])('core/heading', {
+        content: content
+      });
+    }
+  }]
+};
 /* harmony default export */ __webpack_exports__["default"] = (transforms);
 
 /***/ }),
@@ -769,17 +548,6 @@ icons.modalIcon = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["create
 
 /***/ }),
 
-/***/ "@wordpress/blob":
-/*!***************************************!*\
-  !*** external {"this":["wp","blob"]} ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["blob"]; }());
-
-/***/ }),
-
 /***/ "@wordpress/block-editor":
 /*!**********************************************!*\
   !*** external {"this":["wp","blockEditor"]} ***!
@@ -810,17 +578,6 @@ icons.modalIcon = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["create
 /***/ (function(module, exports) {
 
 (function() { module.exports = this["wp"]["components"]; }());
-
-/***/ }),
-
-/***/ "@wordpress/compose":
-/*!******************************************!*\
-  !*** external {"this":["wp","compose"]} ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function() { module.exports = this["wp"]["compose"]; }());
 
 /***/ }),
 

@@ -48,7 +48,7 @@ if ( ! class_exists( 'Tutorial' ) ) :
 	        $this->define( 'TUTORIAL_PATH', dirname( __FILE__ ) );
 	        $this->define( 'TUTORIAL_INCLUDES_PATH', dirname( __FILE__ ) . '/includes' );
 	        $this->define( 'TUTORIAL_DIST_PATH', dirname( __FILE__ ) . '/dist' );
-	        $this->define( 'TUTORIAL_DIST_URL',plugin_dir_url( __FILE__ ) . '/dist' );
+	        $this->define( 'TUTORIAL_DIST_URL',plugin_dir_url( __FILE__ ) . 'dist' );
 	        //$this->define( 'TUTORIAL_ASSET', plugin_dir_url( __FILE__ ) . 'assets' );
 	    }
 
