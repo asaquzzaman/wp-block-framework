@@ -617,7 +617,6 @@ var settings = {
   attributes: attributes,
   transforms: _transforms__WEBPACK_IMPORTED_MODULE_6__["default"],
   edit: _edit__WEBPACK_IMPORTED_MODULE_1__["default"],
-  getEditWrapperProps: getEditWrapperProps,
   save: _save__WEBPACK_IMPORTED_MODULE_5__["default"],
   deprecated: _deprecated__WEBPACK_IMPORTED_MODULE_2__["default"]
 };

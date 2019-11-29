@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/foo.css"],"names":[],"mappings":"AAAA;AACA;AACA,C","file":"./src/test/foo.css","sourcesContent":[".foo {\n\tbackground: green;\n}"],"sourceRoot":""}

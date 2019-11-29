@@ -41,7 +41,6 @@ const settings = {
 	attributes,
 	transforms,
 	edit,
-	getEditWrapperProps,
 	save,
 	deprecated,
 };

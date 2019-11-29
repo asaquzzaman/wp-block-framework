@@ -39,6 +39,18 @@ class Scripts {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		//add_action( 'the_post', array( $this, 'load_assets' ) );
+		add_action( 'enqueue_block_editor_assets', [$this, 'block_editor_assets'] );
+	}
+
+	public function block_editor_assets() {
+		$dependen = require_once( TUTORIAL_DIST_PATH . '/blocks.asset.php' );
+		
+		wp_enqueue_script(
+		    'tutorial-block',
+		    TUTORIAL_DIST_URL . '/blocks.js',
+		    $dependencies['dependencies'],
+		    $dependencies['version'],
+		    true
+		);
 	}
 }

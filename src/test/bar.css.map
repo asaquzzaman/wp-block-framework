@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/bar.css"],"names":[],"mappings":"AAAA;AACA;AACA,C","file":"./src/test/bar.css","sourcesContent":[".bar {\n\tbackground: red;\n}"],"sourceRoot":""}
