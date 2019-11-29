@@ -1,0 +1,22 @@
+{
+	"name": "tutorial/tutorial",
+	"category": "tutorial",
+	"attributes": {
+		"id": {
+			"type": "number"
+		},
+		"columns": {
+			"type": "number"
+		},
+		"layout": {
+			"type": "string"
+		},
+		"gutter": {
+			"type": "string",
+			"default": "medium"
+		},
+		"textColor": {
+			"type": "string"
+		}
+	}
+}
