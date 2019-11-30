@@ -1,3 +1,6 @@
+
+//title, styles, description, icon, keywords, attributes, transforms, edit, save, deprecated, supports, Example
+
 /**
  * Internal dependencies
  */
@@ -25,6 +28,29 @@ const attributes = {
 const settings = {
 	/* translators: block name */
 	title: __( 'Tutorial', 'tutorial' ),
+	styles: [
+		{
+			name: 'info',
+			/* translators: block style */
+			label: __( 'Info', 'coblocks' ),
+			isDefault: true,
+		},
+		{
+			name: 'success',
+			/* translators: block style */
+			label: __( 'Success', 'coblocks' ),
+		},
+		{
+			name: 'warning',
+			/* translators: block style */
+			label: __( 'Warning', 'coblocks' ),
+		},
+		{
+			name: 'error',
+			/* translators: block style */
+			label: __( 'Error', 'coblocks' ),
+		},
+	],
 	/* translators: block description */
 	description: __( 'Add a structured wrapper for column blocks, then add content blocks you’d like to the columns.', 'coblocks' ),
 	icon,

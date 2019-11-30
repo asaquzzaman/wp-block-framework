@@ -1,0 +1,45 @@
+{
+	"name": "tutorial/alert",
+	"category": "tutorial",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"selector": ".wp-block-coblocks-alert__title"
+		},
+		"value": {
+			"type": "string",
+			"source": "html",
+			"selector": ".wp-block-coblocks-alert__text",
+			"default": ""
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#d6efee"
+		},
+		"customBackgroundColor": {
+			"type": "string"
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#094264"
+		},
+		"customTextColor": {
+			"type": "string"
+		},
+		"titleColor": {
+			"type": "string"
+		},
+		"customTitleColor": {
+			"type": "string"
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"customBorderColor": {
+			"type": "string"
+		},
+		"textAlign": {
+			"type": "string"
+		}
+	}
+}

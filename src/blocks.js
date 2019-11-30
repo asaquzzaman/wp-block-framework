@@ -8,6 +8,7 @@ import './utils/block-category';
 
 // Register Blocks
 import * as tutorial from './blocks/tutorial';
+import * as alert from './blocks/alert';
 
 
 /**
@@ -34,7 +35,8 @@ const registerBlock = ( block ) => {
  */
 export const registerTutorialBlocks = () => {
 	[
-		tutorial
+		tutorial,
+		alert
 
 	].forEach( registerBlock );
 };

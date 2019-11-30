@@ -21,6 +21,7 @@
   "homepage": "https://github.com/tutorial",
   "devDependencies": {
     "@wordpress/scripts": "^6.0.0",
+    "classnames": "^2.2.6",
     "css-loader": "^3.2.0",
     "filemanager-webpack-plugin": "^2.0.5",
     "mini-css-extract-plugin": "^0.8.0",

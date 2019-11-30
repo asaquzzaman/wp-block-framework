@@ -3,12 +3,12 @@
  */
 import { getColorClassName, InnerBlocks } from '@wordpress/block-editor';
 
-function Save( { attributes } ) {
+const save =  ({ attributes }) => {
 
 
 	return (
-		<div></div>
+		<div>This is my first WP block</div>
 	);
 }
 
-export default Save;
+export default save;

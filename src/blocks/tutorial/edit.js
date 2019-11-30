@@ -12,15 +12,13 @@ import { isBlobURL } from '@wordpress/blob';
 /**
  * Block edit function
  */
-const editor = () => {
+const editor = (attrs) => {
 	
-	render() {
-
-
-		return (
-			<div>This is my first WP block</div>
-		)
-	}
+	return (
+		
+		<div>This is my first WP block</div>
+	)
+	
 }
 
 export default  editor;

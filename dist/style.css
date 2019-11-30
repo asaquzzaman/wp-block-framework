@@ -1,3 +1,30 @@
+.wp-block-tutorial-alert {
+  background-color: #d6efee;
+  border-radius: 3px;
+  color: #094264;
+  padding: 2em; }
+  .wp-block-tutorial-alert:not(.has-background).is-style-warning {
+    background-color: #fbe7dd; }
+  .wp-block-tutorial-alert:not(.has-background).is-style-error {
+    background-color: #ffdede; }
+  .wp-block-tutorial-alert:not(.has-background).is-style-success {
+    background-color: #d0eac4; }
+  .wp-block-tutorial-alert:not(.has-text-color).is-style-warning {
+    color: #8a4b30; }
+  .wp-block-tutorial-alert:not(.has-text-color).is-style-error {
+    color: #8b343c; }
+  .wp-block-tutorial-alert:not(.has-text-color).is-style-success {
+    color: #154a28; }
+  .wp-block-tutorial-alert__title {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-top: 0; }
+    .wp-block-tutorial-alert__title:empty {
+      display: none; }
+  .wp-block-tutorial-alert__text {
+    margin-bottom: 0;
+    margin-top: 0; }
+
 .style {
   position: relative; }
 

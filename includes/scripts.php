@@ -39,7 +39,8 @@ class Scripts {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		add_action( 'enqueue_block_editor_assets', [$this, 'block_editor_assets'] );
+		add_action( 'enqueue_block_assets', [$this, 'block_editor_assets'] );
+		//add_action( 'enqueue_block_editor_assets', [$this, 'block_editor_assets'] );
 	}
 
 	/**
@@ -54,6 +55,14 @@ class Scripts {
 		    $dependencies['dependencies'],
 		    $dependencies['version'],
 		    true
+		);
+
+		wp_enqueue_style(
+		    'tutorial-block',
+		    TUTORIAL_DIST_URL . '/editor.css',
+		    false,
+		    $dependencies['version'],
+		    'all'
 		);
 	}
 }

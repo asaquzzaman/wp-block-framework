@@ -17,6 +17,9 @@
 		},
 		"textColor": {
 			"type": "string"
+		},
+		"align": {
+			"type": "string"
 		}
 	}
 }

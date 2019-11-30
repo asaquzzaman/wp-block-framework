@@ -1,3 +1,16 @@
+.wp-block-tutorial-alert {
+  background-color: #d6efee !important;
+  color: #094264 !important; }
+  .wp-block-tutorial-alert.is-style-warning {
+    background-color: #fbe7dd !important;
+    color: #8a4b30 !important; }
+  .wp-block-tutorial-alert.is-style-error {
+    background-color: #ffdede !important;
+    color: #8b343c !important; }
+  .wp-block-tutorial-alert.is-style-success {
+    background-color: #d0eac4 !important;
+    color: #154a28 !important; }
+
 .editor {
   display: block; }
 

@@ -1,0 +1,58 @@
+$alert-default-background-color: #d6efee;
+$alert-default-color: #094264;
+$alert-warning-background-color: #fbe7dd;
+$alert-warning-color: #8a4b30;
+$alert-error-background-color: #ffdede;
+$alert-error-color: #8b343c;
+$alert-success-background-color: #d0eac4;
+$alert-success-color: #154a28;
+
+.wp-block-tutorial-alert {
+	background-color: $alert-default-background-color;
+	border-radius: 3px;
+	color: $alert-default-color;
+	padding: 2em;
+
+	&:not(.has-background) {
+		&.is-style-warning {
+			background-color: $alert-warning-background-color;
+		}
+
+		&.is-style-error {
+			background-color: $alert-error-background-color;
+		}
+
+		&.is-style-success {
+			background-color: $alert-success-background-color;
+		}
+	}
+
+	&:not(.has-text-color) {
+		&.is-style-warning {
+			color: $alert-warning-color;
+		}
+
+		&.is-style-error {
+			color: $alert-error-color;
+		}
+
+		&.is-style-success {
+			color: $alert-success-color;
+		}
+	}
+
+	&__title {
+		display: block;
+		margin-bottom: 0.5em;
+		margin-top: 0;
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	&__text {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}
