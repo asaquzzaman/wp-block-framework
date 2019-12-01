@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "webpack --config .dev/scripts/start.js --progress --colors --watch"
+    "start": "webpack --config .dev/scripts/start.js --progress --colors --watch",
+    "test": "wp-scripts test-e2e --colors --config .dev/tests/jest/jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,14 @@
   },
   "homepage": "https://github.com/tutorial",
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@wordpress/jest-preset-default": "^5.2.0",
+    "@wordpress/jest-puppeteer-axe": "^1.4.0",
     "@wordpress/scripts": "^6.0.0",
     "classnames": "^2.2.6",
     "css-loader": "^3.2.0",
     "filemanager-webpack-plugin": "^2.0.5",
+    "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",

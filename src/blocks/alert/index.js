@@ -1,3 +1,4 @@
+//title, styles, description, icon, keywords, attributes, transforms, edit, save, deprecated, supports, example, inspector
 /**
  * Styles.
  */
@@ -28,7 +29,7 @@ const settings = {
 	description: __( 'Provide contextual feedback messages or notices.', 'coblocks' ),
 	icon,
 	keywords: [
-		'coblocks',
+		'tutorial',
 		/* translators: block keyword */
 		__( 'notice', 'coblocks' ),
 		/* translators: block keyword */
@@ -59,8 +60,8 @@ const settings = {
 	],
 	supports: {
 		align: true,
-		alignWide: false,
-		alignFull: false,
+		alignWide: true,
+		alignFull: true,
 	},
 	example: {
 		attributes: {

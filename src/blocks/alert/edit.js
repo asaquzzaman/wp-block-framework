@@ -25,7 +25,7 @@ const edit = ( props ) => {
 			value,
 			backgroundColor
 		} = attributes;
-	console.log(backgroundColor, props.attributes.backgroundColor);
+	
 	return (
 		
 		<Fragment>

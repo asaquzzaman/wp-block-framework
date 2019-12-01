@@ -586,7 +586,6 @@ var edit = function edit(props) {
       title = attributes.title,
       value = attributes.value,
       backgroundColor = attributes.backgroundColor;
-  console.log(backgroundColor, props.attributes.backgroundColor);
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, isSelected && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_inspector__WEBPACK_IMPORTED_MODULE_3__["default"], props), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: className + ' my-custom-class',
     style: {
@@ -666,6 +665,8 @@ var _block_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_
 /* harmony import */ var _transforms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./transforms */ "./src/blocks/alert/transforms.js");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__);
+//title, styles, description, icon, keywords, attributes, transforms, edit, save, deprecated, supports, example, inspector
+
 /**
  * Styles.
  */
@@ -698,7 +699,7 @@ var settings = {
   /* translators: block description */
   description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('Provide contextual feedback messages or notices.', 'coblocks'),
   icon: _icon__WEBPACK_IMPORTED_MODULE_2__["default"],
-  keywords: ['coblocks',
+  keywords: ['tutorial',
   /* translators: block keyword */
   Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__["__"])('notice', 'coblocks'),
   /* translators: block keyword */
@@ -727,8 +728,8 @@ var settings = {
   }],
   supports: {
     align: true,
-    alignWide: false,
-    alignFull: false
+    alignWide: true,
+    alignFull: true
   },
   example: {
     attributes: {
@@ -903,7 +904,7 @@ var _block_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_
 var transforms = {
   from: [{
     type: 'block',
-    blocks: ['core/paragraph'],
+    blocks: ['core/heading'],
     transform: function transform(_ref) {
       var content = _ref.content;
       return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["createBlock"])(_block_json__WEBPACK_IMPORTED_MODULE_0__.name, {
@@ -911,24 +912,37 @@ var transforms = {
       });
     }
   }, {
-    type: 'raw',
-    selector: 'div.wp-block-coblocks-alert',
-    schema: {
-      div: {
-        classes: ['wp-block-coblocks-alert']
-      }
+    type: 'block',
+    blocks: ['core/paragraph'],
+    transform: function transform(_ref2) {
+      var content = _ref2.content;
+      return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["createBlock"])(_block_json__WEBPACK_IMPORTED_MODULE_0__.name, {
+        value: content
+      });
     }
   }],
   to: [{
     type: 'block',
-    blocks: ['core/paragraph'],
-    transform: function transform(_ref2) {
-      var value = _ref2.value,
-          title = _ref2.title;
+    blocks: ['core/heading'],
+    transform: function transform(_ref3) {
+      var value = _ref3.value,
+          title = _ref3.title;
 
-      if (title) {
-        value = title + '<br />' + value;
-      }
+      if (!value || !value.length) {
+        return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["createBlock"])('core/heading');
+      } // transforming an alert element with content
+
+
+      return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["createBlock"])('core/heading', {
+        content: value
+      });
+    }
+  }, {
+    type: 'block',
+    blocks: ['core/paragraph'],
+    transform: function transform(_ref4) {
+      var value = _ref4.value,
+          title = _ref4.title;
 
       if (!value || !value.length) {
         return Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["createBlock"])('core/paragraph');
