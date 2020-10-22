@@ -13,58 +13,61 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { Fragment } from '@wordpress/element';
+import { Fragment, Component } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
-import { compose } from '@wordpress/compose'
+import { select, withSelect, withDispatch, dispatch } from '@wordpress/data';
+import { compose } from '@wordpress/compose';
 
 
 /**
  * Block edit function
  */
-const edit = ( props ) => {
+class Edit extends Component {
 
-	const {
-		attributes,
-		className,
-		isSelected,
-		setAttributes,
-		textColor,
-	} = props;
+	render () {
+		const {
+			attributes,
+			className,
+			isSelected,
+			setAttributes,
+			textColor,
+		} = this.props;
 
-	const {
-		textAlign,
-		value,
-		fontSize,
-		posts
-	} = attributes;
-	console.log(posts);
-	return (
+		const {
+			textAlign,
+			value,
+			fontSize,
+			posts
+		} = attributes;
 		
-		<Fragment>
-
-			{ isSelected && ( <Inspector { ...props } /> ) }
-			{ isSelected && ( <Controls { ...props } /> ) }
+		return (
 			
-			<div 
-				className={ classnames( className, 'tutorial-alert' ) }
-			>
+			<Fragment>
 
-				<RichText
-					/* translators: placeholder text for input box */
-					placeholder={ __( 'Write text…', 'tutorial' ) }
-					value={ value }
-					className="wp-block-tutorial-alert__text"
-					onChange={ ( value ) => setAttributes( { value: value } ) }
-					keepPlaceholderOnFocus
-					style={{
-						fontSize: `${fontSize}px`,
-						textAlign: `${textAlign}`
-					}}
-				/>
-			</div>
-			
-		</Fragment>	
-	);
+				{ isSelected && ( <Inspector { ...this.props } /> ) }
+				{ isSelected && ( <Controls { ...this.props } /> ) }
+				
+				<div 
+					className={ classnames( className, 'tutorial-alert' ) }
+				>
+
+					<RichText
+						/* translators: placeholder text for input box */
+						placeholder={ __( 'Write text…', 'tutorial' ) }
+						value={ value }
+						className="wp-block-tutorial-alert__text"
+						onChange={ ( value ) => setAttributes( { value: value } ) }
+						keepPlaceholderOnFocus
+						style={{
+							fontSize: `${fontSize}px`,
+							textAlign: `${textAlign}`
+						}}
+					/>
+				</div>
+				
+			</Fragment>	
+		);
+	}
 }
 
 
@@ -76,19 +79,20 @@ export default compose([
 		if ( !find( kinds, { name: 'tutorial' } ) ) {
 			dispatch('core').addEntities([
 				{
-					name: 'post', 
+					name: 'posts', 
 					kind: 'tutorial', 
 					baseURL: '/tutorial/v1/posts'
 				}
 			])
 		}
 	} ),
+
 	withSelect( ( select, ownProps ) => {
-		const { isResolving, hasFinishedResolution, getCachedResolvers } = select( 'core/data' );
+		const { isResolving } = select( 'core/data' );
 		
 	    return {
-	    	posts: select('core').getEntityRecords( 'tutorial', 'post' ),
-	    	isResolving: isResolving( 'core', 'getEntityRecords', [ 'tutorial', 'post' ] ),
+	    	posts: select('core').getEntityRecords( 'tutorial', 'posts' ),
+	    	isResolving: isResolving( 'core', 'getEntityRecords', [ 'tutorial', 'posts' ] ),
 		} 
 	} )
 

@@ -46,16 +46,6 @@ const Modules = {
 		filename: '[name].js'
 	},
 
-	optimization: {
-	    splitChunks: {
-	    	chunks: 'async',
-     	},
-    },
-
-	node: {
-		fs: 'empty'
-	},
-
 	module: {
 		...defaultConfig.module,
 		rules: [

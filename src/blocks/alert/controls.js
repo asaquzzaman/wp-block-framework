@@ -66,7 +66,7 @@ class Controls extends Component {
 				<BlockControls>
 					<Toolbar 
 						isCollapsed={ true }
-						icon='align-center'
+						icon='image-flip-vertical'
 						controls={ toolbarControls } 
 					/>
 

@@ -1,19 +1,15 @@
 /**
- * Internal dependencies
- */
-import brandAssets from './brand-assets';
-
-/**
  * WordPress dependencies
  */
-import { setCategories } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
+import { setCategories } from '@wordpress/blocks';
+import { Icon } from '@wordpress/components';
 
 setCategories( [
 	{
 		slug: 'tutorial',
 		title: __( 'Tutorial', 'tutorial' ),
-		icon: brandAssets.categoryIcon
+		icon: <Icon icon={ 'wordpress' } />
 	}
 
 ] );

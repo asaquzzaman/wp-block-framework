@@ -6,6 +6,9 @@
 
 namespace Tutorial\Includes;
 
+use Exception;
+use WP_REST_Server;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -39,6 +42,37 @@ class Actions {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		
+		add_action( 'rest_api_init', [ $this, 'register_routes' ] );
 	}
+
+	/**
+     * Resgister routes
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function register_routes() {
+
+        register_rest_route(
+            'tutorial/v1',
+            '/posts/',
+            [
+                [
+                    'methods'             => WP_REST_Server::READABLE,
+                    'callback'            => [ $this, 'get_posts' ],
+                    'permission_callback' => [ $this, 'permission_check' ],
+                    //'args'                => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
+                ]
+            ]
+        );
+    }
+
+    public function permission_check() {
+        return true;
+    }
+
+    public function get_posts( $request ) {
+    	return get_posts();
+    }
 }
