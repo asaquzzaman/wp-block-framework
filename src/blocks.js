@@ -1,12 +1,16 @@
 /**
+ * Internal dependency
+ */
+import './utils/block-category';
+
+/**
  * WordPress dependencies
  */
 import { registerBlockType } from '@wordpress/blocks';
 
-import './utils/block-category';
 
 
-// Register Blocks
+// Register Block
 import * as tutorial from './blocks/tutorial';
 import * as alert from './blocks/alert';
 
@@ -31,9 +35,9 @@ const registerBlock = ( block ) => {
 };
 
 /**
- * Function to register blocks provided by CoBlocks.
+ * Function to register blocks.
  */
-export const registerTutorialBlocks = () => {
+const registerTutorialBlocks = () => {
 	[
 		tutorial,
 		alert

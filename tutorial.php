@@ -1,8 +1,15 @@
 <?php
 /**
- * Plugin Name: Turotial	
+ * Plugin Name: Turotial
+ * Plugin URI: https://github.com/tutorial
+ * Description: Getting started with Gutenberg block development.
+ * Author: weDevs
+ * Version: 1.0.0
+ * Text Domain: tutorial
+ * Domain Path: /languages
+ * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
-
 
 if ( ! class_exists( 'Tutorial' ) ) :
 	/**

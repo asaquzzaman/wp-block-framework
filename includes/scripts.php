@@ -15,8 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Load general WP action hook
  */
 class Scripts {
-
-
 	/**
 	 * This plugin's instance.
 	 *
@@ -40,6 +38,7 @@ class Scripts {
 	 */
 	public function __construct() {
 		add_action( 'enqueue_block_assets', [$this, 'block_editor_assets'] );
+		
 		//add_action( 'enqueue_block_editor_assets', [$this, 'block_editor_assets'] );
 	}
 
@@ -58,10 +57,10 @@ class Scripts {
 		);
 
 		wp_enqueue_style(
-		    'tutorial-block',
-		    TUTORIAL_DIST_URL . '/editor.css',
+		    'tutorial-block-style',
+		    TUTORIAL_DIST_URL . '/style.css',
 		    false,
-		    $dependencies['version'],
+		    time(),
 		    'all'
 		);
 	}

@@ -1,7 +1,3 @@
-//title, styles, description, icon, keywords, attributes, transforms, edit, save, deprecated, supports, example, inspector
-/**
- * Styles.
- */
 /**
  * Internal dependencies
  */
@@ -16,6 +12,7 @@ import transforms from './transforms';
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { Icon } from '@wordpress/components';
 
 /**
  * Block constants
@@ -23,39 +20,26 @@ import { __ } from '@wordpress/i18n';
 const { name, category, attributes } = metadata;
 
 const settings = {
-	/* translators: block name */
-	title: __( 'Alert', 'coblocks' ),
-	/* translators: block description */
-	description: __( 'Provide contextual feedback messages or notices.', 'coblocks' ),
-	icon,
-	keywords: [
-		'tutorial',
-		/* translators: block keyword */
-		__( 'notice', 'coblocks' ),
-		/* translators: block keyword */
-		__( 'message', 'coblocks' ),
-	],
+	title: __( 'Alert', 'tutorial' ),
+	description: __( 'Provide contextual feedback messages or notices.', 'tutorial' ),
+	keywords: [ 'tutorial', 'notice', 'message' ],
 	styles: [
 		{
 			name: 'info',
-			/* translators: block style */
-			label: __( 'Info', 'coblocks' ),
+			label: __( 'Info', 'tutorial' ),
 			isDefault: true,
 		},
 		{
 			name: 'success',
-			/* translators: block style */
-			label: __( 'Success', 'coblocks' ),
+			label: __( 'Success', 'tutorial' )
 		},
 		{
 			name: 'warning',
-			/* translators: block style */
-			label: __( 'Warning', 'coblocks' ),
+			label: __( 'Warning', 'tutorial' )
 		},
 		{
 			name: 'error',
-			/* translators: block style */
-			label: __( 'Error', 'coblocks' ),
+			label: __( 'Error', 'tutorial' )
 		},
 	],
 	supports: {
@@ -69,6 +53,7 @@ const settings = {
 			value: __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.', 'tutorial' ),
 		},
 	},
+	icon: <Icon icon={ icon } />,
 	attributes,
 	transforms,
 	edit,
@@ -76,4 +61,4 @@ const settings = {
 	deprecated,
 };
 
-export { name, category, metadata, settings, attributes };
+export { name, category, settings };

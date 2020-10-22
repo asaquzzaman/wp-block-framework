@@ -1,10 +1,22 @@
+
+/**
+ * Internal dependencies
+ */
+import Controls from './controls';
+import Inspector from './inspector';
+
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
-import Inspector from './inspector';
+import { compose } from '@wordpress/compose'
+
 
 /**
  * Block edit function
@@ -12,37 +24,29 @@ import Inspector from './inspector';
 const edit = ( props ) => {
 
 	const {
-			attributes,
-			className,
-			isSelected,
-			setAttributes,
-			textColor,
-		} = props;
+		attributes,
+		className,
+		isSelected,
+		setAttributes,
+		textColor,
+	} = props;
 
-		const {
-			textAlign,
-			title,
-			value,
-			backgroundColor
-		} = attributes;
-	
+	const {
+		textAlign,
+		value,
+		fontSize,
+		posts
+	} = attributes;
+	console.log(posts);
 	return (
 		
 		<Fragment>
 
-			{ isSelected && (
-					<Inspector
-						{ 
-							...props
-						}
-					/>
-				) }
+			{ isSelected && ( <Inspector { ...props } /> ) }
+			{ isSelected && ( <Controls { ...props } /> ) }
 			
 			<div 
-				className={ className + ' my-custom-class' }
-				style={{
-					backgroundColor: backgroundColor + ' !important'
-				}}
+				className={ classnames( className, 'tutorial-alert' ) }
 			>
 
 				<RichText
@@ -52,11 +56,40 @@ const edit = ( props ) => {
 					className="wp-block-tutorial-alert__text"
 					onChange={ ( value ) => setAttributes( { value: value } ) }
 					keepPlaceholderOnFocus
+					style={{
+						fontSize: `${fontSize}px`,
+						textAlign: `${textAlign}`
+					}}
 				/>
 			</div>
+			
 		</Fragment>	
 	);
 }
 
 
-export default edit;
+export default compose([
+	withDispatch( ( dispatch, ownProps, registry ) => { 
+		
+		const kinds = select('core').getEntitiesByKind('tutorial');
+
+		if ( !find( kinds, { name: 'tutorial' } ) ) {
+			dispatch('core').addEntities([
+				{
+					name: 'post', 
+					kind: 'tutorial', 
+					baseURL: '/tutorial/v1/posts'
+				}
+			])
+		}
+	} ),
+	withSelect( ( select, ownProps ) => {
+		const { isResolving, hasFinishedResolution, getCachedResolvers } = select( 'core/data' );
+		
+	    return {
+	    	posts: select('core').getEntityRecords( 'tutorial', 'post' ),
+	    	isResolving: isResolving( 'core', 'getEntityRecords', [ 'tutorial', 'post' ] ),
+		} 
+	} )
+
+])(Edit);

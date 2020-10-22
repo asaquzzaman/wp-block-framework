@@ -4,6 +4,7 @@
  */
 import { __ } from '@wordpress/i18n';
 import { Component, Fragment } from '@wordpress/element';
+import { RangeControl, PanelBody } from '@wordpress/components';
 import { InspectorControls, ContrastChecker, PanelColorSettings } from '@wordpress/block-editor';
 
 
@@ -16,14 +17,14 @@ class Inspector extends Component {
 	render() {
 		const {
 			attributes,
-			setAttributes,
+			setAttributes
 		} = this.props;
 
 		const {
 			textAlign,
 			title,
 			value,
-			backgroundColor
+			fontSize
 		} = attributes;
 		
 		const changeBackground = (color) => {
@@ -32,20 +33,20 @@ class Inspector extends Component {
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelColorSettings
-						title={ __( 'Color Settings', 'coblocks' ) }
+					<PanelBody	
+						title={ __( "Development Tools", 'frontrom' ) } 
 						initialOpen={ false }
-						colorSettings={ [
-							{
-								value: backgroundColor,
-								onChange: changeBackground,
-								label: __( 'Background Color', 'coblocks' ),
-							},
-						
-						] }
 					>
-						
-					</PanelColorSettings>
+					    <RangeControl
+					        label={ __( 'Font Size', 'frontrom' ) }
+					        value={ parseInt(fontSize) }
+					        onChange={ ( fontSize ) => setAttributes( { fontSize } ) }
+					        min={ 1 }
+					        step={ 1 }
+					        max={ 50 }
+					    />
+					
+					</PanelBody>
 				</InspectorControls>
 			</Fragment>
 		);

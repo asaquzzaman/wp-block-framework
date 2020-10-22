@@ -21,6 +21,9 @@ import { __ } from '@wordpress/i18n';
  */
 const { name, category } = metadata;
 
+/**
+ * Block attributes
+ */
 const attributes = {
 	...metadata.attributes,
 };

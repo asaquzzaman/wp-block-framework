@@ -8,38 +8,15 @@
 		},
 		"value": {
 			"type": "string",
-			"source": "html",
-			"selector": ".wp-block-coblocks-alert__text",
 			"default": ""
 		},
-		"backgroundColor": {
+		"fontSize": {
 			"type": "string",
-			"default": "#d6efee"
-		},
-		"customBackgroundColor": {
-			"type": "string"
-		},
-		"textColor": {
-			"type": "string",
-			"default": "#094264"
-		},
-		"customTextColor": {
-			"type": "string"
-		},
-		"titleColor": {
-			"type": "string"
-		},
-		"customTitleColor": {
-			"type": "string"
-		},
-		"borderColor": {
-			"type": "string"
-		},
-		"customBorderColor": {
-			"type": "string"
+			"default": "20"
 		},
 		"textAlign": {
-			"type": "string"
+			"type": "string",
+			"default": "left"
 		}
 	}
 }

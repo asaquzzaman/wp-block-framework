@@ -1,19 +1,19 @@
 /**
- * WordPress dependencies
- */
-import { getCategories, setCategories } from '@wordpress/blocks';
-
-/**
  * Internal dependencies
  */
 import brandAssets from './brand-assets';
 
+/**
+ * WordPress dependencies
+ */
+import { setCategories } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
+
 setCategories( [
 	{
 		slug: 'tutorial',
-		title: 'Tutorial',
-		icon: brandAssets.categoryIcon,
-	},
+		title: __( 'Tutorial', 'tutorial' ),
+		icon: brandAssets.categoryIcon
+	}
 
-	...getCategories().filter( ( { slug } ) => slug !== 'coblocks-galleries' ),
 ] );

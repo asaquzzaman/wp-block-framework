@@ -6,7 +6,7 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
-import { RichText, getColorClassName } from '@wordpress/block-editor';
+import { RichText } from '@wordpress/block-editor';
 
 const save = ( { attributes } ) => {
 
@@ -17,11 +17,10 @@ const save = ( { attributes } ) => {
 		} = attributes;
 
 	return (
-		<div>
+		<div className={ classnames( attributes.className, 'tutorial-alert' ) }>
 			
 			<RichText.Content
 				tagName="p"
-				className="wp-block-coblocks-alert__text"
 				value={ value }
 			/>
 		
