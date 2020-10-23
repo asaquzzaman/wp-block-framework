@@ -18,7 +18,7 @@ const deprecated =  [
         attributes,
 
         save( { attributes } ) {
-            
+           
         },
     }
 ]

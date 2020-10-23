@@ -62,7 +62,6 @@ class Actions {
                     'methods'             => WP_REST_Server::READABLE,
                     'callback'            => [ $this, 'get_posts' ],
                     'permission_callback' => [ $this, 'permission_check' ],
-                    //'args'                => $this->get_endpoint_args_for_item_schema( WP_REST_Server::EDITABLE ),
                 ]
             ]
         );
@@ -73,6 +72,8 @@ class Actions {
     }
 
     public function get_posts( $request ) {
-    	return get_posts();
+        $numberposts = $request->get_param( 'numberposts' );
+
+    	return get_posts([ 'numberposts' => $numberposts ]);
     }
 }

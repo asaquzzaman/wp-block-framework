@@ -1,4 +1,3 @@
-
 /**
  * Internal dependencies
  */
@@ -9,6 +8,7 @@ import Inspector from './inspector';
  * External dependencies
  */
 import classnames from 'classnames';
+
 /**
  * WordPress dependencies
  */
@@ -17,7 +17,6 @@ import { Fragment, Component } from '@wordpress/element';
 import { RichText } from '@wordpress/block-editor';
 import { select, withSelect, withDispatch, dispatch } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
-
 
 /**
  * Block edit function
@@ -43,20 +42,16 @@ class Edit extends Component {
 		return (
 			
 			<Fragment>
-
 				{ isSelected && ( <Inspector { ...this.props } /> ) }
 				{ isSelected && ( <Controls { ...this.props } /> ) }
 				
 				<div 
 					className={ classnames( className, 'tutorial-alert' ) }
 				>
-
 					<RichText
-						/* translators: placeholder text for input box */
 						placeholder={ __( 'Write text…', 'tutorial' ) }
 						value={ value }
-						className="wp-block-tutorial-alert__text"
-						onChange={ ( value ) => setAttributes( { value: value } ) }
+						onChange={ value => setAttributes( value ) }
 						keepPlaceholderOnFocus
 						style={{
 							fontSize: `${fontSize}px`,
@@ -64,12 +59,10 @@ class Edit extends Component {
 						}}
 					/>
 				</div>
-				
 			</Fragment>	
 		);
 	}
 }
-
 
 export default compose([
 	withDispatch( ( dispatch, ownProps, registry ) => { 
@@ -91,7 +84,7 @@ export default compose([
 		const { isResolving } = select( 'core/data' );
 		
 	    return {
-	    	posts: select('core').getEntityRecords( 'tutorial', 'posts' ),
+	    	posts: select('core').getEntityRecords( 'tutorial', 'posts', {numberposts: 1, post_type: 'post'} ),
 	    	isResolving: isResolving( 'core', 'getEntityRecords', [ 'tutorial', 'posts' ] ),
 		} 
 	} )

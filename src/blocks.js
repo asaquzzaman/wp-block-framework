@@ -2,8 +2,8 @@
  * Internal dependency
  */
 import './utils/block-category';
-import * as tutorial from './blocks/tutorial';
 import * as alert from './blocks/alert';
+
 
 /**
  * WordPress dependencies
@@ -34,8 +34,7 @@ const registerBlock = ( block ) => {
  */
 const registerTutorialBlocks = () => {
 	[
-		alert,
-		tutorial
+		alert
 
 	].forEach( registerBlock );
 };
