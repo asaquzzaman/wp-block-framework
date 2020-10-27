@@ -10,6 +10,7 @@ setCategories( [
 		slug: 'tutorial',
 		title: __( 'Tutorial', 'tutorial' ),
 		icon: <Icon icon={ 'wordpress' } />
-	}
+	},
+	...getCategories().filter( ( { slug } ) => slug !== 'tutorial' ),
 
 ] );
