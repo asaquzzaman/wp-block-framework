@@ -51,7 +51,7 @@ class Edit extends Component {
 					<RichText
 						placeholder={ __( 'Write text…', 'tutorial' ) }
 						value={ value }
-						onChange={ value => setAttributes( value ) }
+						onChange={ ( value ) => setAttributes( { value } ) }
 						keepPlaceholderOnFocus
 						style={{
 							fontSize: `${fontSize}px`,
