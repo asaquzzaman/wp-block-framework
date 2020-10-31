@@ -37,15 +37,14 @@ class Scripts {
 	 * The Constructor.
 	 */
 	public function __construct() {
-		add_action( 'enqueue_block_assets', [$this, 'block_editor_assets'] );
-		
-		//add_action( 'enqueue_block_editor_assets', [$this, 'block_editor_assets'] );
+		add_action( 'enqueue_block_assets', [ $this, 'block_assets' ] );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_assets' ] );
 	}
 
 	/**
-	 * Block editor assets.
+	 * Block assets.
 	 */
-	public function block_editor_assets() {
+	public function block_assets() {
 		$dependencies = require_once( TUTORIAL_DIST_PATH . '/blocks.asset.php' );
 
 		wp_enqueue_script(
@@ -63,5 +62,11 @@ class Scripts {
 		    time(),
 		    'all'
 		);
+	}
+	/**
+	 * Block editor assets.
+	 */
+	public function block_editor_assets() {
+		wp_enqueue_style( 'tutorial-block-editor-style', TUTORIAL_DIST_URL . '/editor.css', false, time(), 'all' );
 	}
 }
